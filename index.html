@@ -3,185 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Desa Makmur Jaya</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome untuk Icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Kedai Rasa Rumah - UMKM Kuliner Lokal</title>
+    <style>
+        /* Reset dan Basis */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: #333;
+            line-height: 1.6;
+            background-color: #fcfcfc;
+        }
+
+        /* Navigasi */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #8B4513; /* Warna cokelat hangat */
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #8B4513;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #f5ebe0;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #4a2c11;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background-color: #8B4513;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-cta:hover {
+            background-color: #6f370f;
+        }
+
+        /* Tentang Kami */
+        .about {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            color: #4a2c11;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+        }
+
+        /* Produk */
+        .products {
+            background-color: #f9f9f9;
+            padding: 60px 5%;
+        }
+
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .products h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #4a2c11;
+            margin-bottom: 40px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Placeholder gambar menggunakan warna solid, silakan ganti dengan url gambar Anda */
+        .product-image {
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-weight: bold;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-price {
+            font-weight: bold;
+            color: #8B4513;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        /* Kontak */
+        .contact {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            color: #4a2c11;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #3e2713;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsif (Layar Kecil) */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                padding: 0;
+            }
+
+            .nav-links li {
+                margin: 0 10px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body>
 
-    <!-- NAVIGATION BAR -->
-    <nav class="bg-emerald-700 text-white sticky top-0 z-50 shadow-md">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <!-- Logo / Nama Desa -->
-            <div class="flex items-center space-x-3">
-                <i class="fa-solid fa-mountain-sun text-2xl"></i>
-                <span class="font-bold text-lg tracking-wider">Desa Makmur Jaya</span>
-            </div>
-            
-            <!-- SATU TOMBOL UNTUK SEMUA FITUR -->
-            <div class="relative">
-                <button id="btn-fitur" class="bg-emerald-800 hover:bg-emerald-900 border border-emerald-600 px-5 py-2 rounded-lg text-sm font-semibold flex items-center space-x-2 transition shadow">
-                    <i class="fa-solid fa-grid-2x2 md:fa-solid fa-bars"></i>
-                    <span>Menu Layanan & Fitur</span>
-                    <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200" id="icon-chevron"></i>
-                </button>
-
-                <!-- PANEL DROPDOWN / MEGA MENU (Tersembunyi secara default) -->
-                <div id="panel-fitur" class="hidden absolute right-0 mt-3 w-[290px] md:w-[650px] bg-white text-gray-800 rounded-xl shadow-2xl border border-gray-100 p-6 z-50">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        
-                        <!-- Grup 1: Informasi Desa -->
-                        <div>
-                            <h4 class="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-3">Informasi Desa</h4>
-                            <ul class="space-y-2">
-                                <li>
-                                    <a href="#" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-50 transition">
-                                        <i class="fa-solid fa-circle-info text-emerald-600 w-5 text-center"></i>
-                                        <div>
-                                            <div class="text-sm font-semibold">Tentang Profil Desa</div>
-                                            <div class="text-xs text-gray-500">Sejarah, visi, dan misi desa.</div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-50 transition">
-                                        <i class="fa-solid fa-sitemap text-emerald-600 w-5 text-center"></i>
-                                        <div>
-                                            <div class="text-sm font-semibold">Struktur Organisasi</div>
-                                            <div class="text-xs text-gray-500">Perangkat dan lembaga desa.</div>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Grup 2: Pelayanan Publik (Koneksi Database) -->
-                        <div>
-                            <h4 class="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-3">Pelayanan Publik</h4>
-                            <ul class="space-y-2">
-                                <li>
-                                    <a href="#" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-50 transition">
-                                        <i class="fa-solid fa-envelope-open-text text-emerald-600 w-5 text-center"></i>
-                                        <div>
-                                            <div class="text-sm font-semibold">Pengajuan Surat Online</div>
-                                            <div class="text-xs text-gray-500">Buat surat pengantar dan keterangan.</div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-50 transition">
-                                        <i class="fa-solid fa-chart-simple text-emerald-600 w-5 text-center"></i>
-                                        <div>
-                                            <div class="text-sm font-semibold">Data Demografi</div>
-                                            <div class="text-xs text-gray-500">Statistik kependudukan real-time.</div>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Grup 3: Ekonomi & Potensi -->
-                        <div class="md:col-span-2 border-t pt-4 mt-2">
-                            <h4 class="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-3">Ekonomi & Kabar</h4>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <a href="#" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-50 transition">
-                                    <i class="fa-solid fa-store text-emerald-600 w-5 text-center"></i>
-                                    <div>
-                                        <div class="text-sm font-semibold">Direktori UMKM & Wisata</div>
-                                        <div class="text-xs text-gray-500">Promosi potensi lokal desa.</div>
-                                    </div>
-                                </a>
-                                <a href="#" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-50 transition">
-                                    <i class="fa-solid fa-newspaper text-emerald-600 w-5 text-center"></i>
-                                    <div>
-                                        <div class="text-sm font-semibold">Kabar & Pengumuman</div>
-                                        <div class="text-xs text-gray-500">Berita terkini kegiatan desa.</div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <header class="relative bg-cover bg-center h-[500px]" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80');">
-        <div class="container mx-auto px-4 h-full flex flex-col justify-center items-center text-center text-white">
-            <h1 class="text-3xl md:text-5xl font-extrabold mb-4">Selamat Datang di Portal Desa Makmur Jaya</h1>
-            <p class="text-md md:text-lg max-w-2xl mb-8 text-gray-200">Akses semua informasi, statistik kependudukan, dan layanan administrasi desa dalam satu pintu.</p>
-            <div class="space-x-4">
-                <button onclick="toggleMenu()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3 rounded-lg font-medium shadow transition">Buka Menu Layanan</button>
-            </div>
-        </div>
+    <!-- Header & Navigasi -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Rasa Rumah</div>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#products">Produk</a></li>
+                <li><a href="#contact">Hubungi</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- STATISTIK CEPAT -->
-    <section class="py-12 bg-white shadow-sm -mt-16 relative z-10 max-w-5xl mx-auto rounded-xl px-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div class="p-4 border-r border-gray-100 last:border-0">
-                <div class="text-3xl font-bold text-emerald-700">3,420</div>
-                <p class="text-xs uppercase tracking-wider text-gray-500 font-semibold mt-1">Total Penduduk</p>
-            </div>
-            <div class="p-4 border-r border-gray-100 last:border-0">
-                <div class="text-3xl font-bold text-emerald-700">1,150</div>
-                <p class="text-xs uppercase tracking-wider text-gray-500 font-semibold mt-1">Kepala Keluarga</p>
-            </div>
-            <div class="p-4 border-r border-gray-100 last:border-0">
-                <div class="text-3xl font-bold text-emerald-700">12</div>
-                <p class="text-xs uppercase tracking-wider text-gray-500 font-semibold mt-1">RT / RW</p>
-            </div>
-            <div class="p-4">
-                <div class="text-3xl font-bold text-emerald-700">45</div>
-                <p class="text-xs uppercase tracking-wider text-gray-500 font-semibold mt-1">UMKM Aktif</p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Cita Rasa Rumahan, Kualitas Pilihan</h1>
+            <p>Menghadirkan aneka jajanan dan kopi tradisional yang dibuat dengan bahan baku berkualitas serta resep turun-temurun.</p>
+            <a href="https://wa.me/628123456789" class="btn-cta" target="_blank">Pesan Sekarang via WA</a>
+        </div>
+    </section>
+
+    <!-- Tentang Kami -->
+    <section class="about" id="about">
+        <h2>Tentang Kami</h2>
+        <p>Kedai Rasa Rumah berdiri sejak tahun 2021. Kami berkomitmen untuk menyajikan produk kuliner lokal yang higienis, lezat, dan ramah di kantong. Setiap produk dibuat langsung secara higienis untuk menjaga mutu dan cita rasa autentiknya.</p>
+    </section>
+
+    <!-- Produk -->
+    <section class="products" id="products">
+        <div class="products-container">
+            <h2>Menu Unggulan Kami</h2>
+            <div class="product-grid">
+                
+                <!-- Produk 1 -->
+                <div class="product-card">
+                    <div class="product-image">Foto Produk 1</div>
+                    <div class="product-info">
+                        <h3 class="product-title">Kopi Susu Gula Aren</h3>
+                        <p class="product-price">Rp 15.000</p>
+                        <p style="color: #666; font-size: 0.9rem;">Perpaduan kopi espresso lokal dengan susu segar dan pemanis gula aren alami.</p>
+                    </div>
+                </div>
+
+                <!-- Produk 2 -->
+                <div class="product-card">
+                    <div class="product-image">Foto Produk 2</div>
+                    <div class="product-info">
+                        <h3 class="product-title">Keripik Singkong Renyah</h3>
+                        <p class="product-price">Rp 12.000</p>
+                        <p style="color: #666; font-size: 0.9rem;">Keripik singkong tipis dengan varian rasa original asin dan pedas daun jeruk.</p>
+                    </div>
+                </div>
+
+                <!-- Produk 3 -->
+                <div class="product-card">
+                    <div class="product-image">Foto Produk 3</div>
+                    <div class="product-info">
+                        <h3 class="product-title">Roti Bakar Cokelat Keju</h3>
+                        <p class="product-price">Rp 18.000</p>
+                        <p style="color: #666; font-size: 0.9rem;">Roti panggang dengan isian cokelat premium melimpah dan taburan keju gurih.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- KONTEN UTAMA (Tempat Informasi Berjalan) -->
-    <main class="container mx-auto px-4 py-16">
-        <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-            <h2 class="text-xl font-bold mb-4">Informasi Penting</h2>
-            <p class="text-gray-600 leading-relaxed">Website ini menggunakan satu tombol navigasi di bagian kanan atas untuk mengakses seluruh fitur. Silakan klik tombol <strong>"Menu Layanan & Fitur"</strong> untuk mulai mengajukan surat, melihat data demografi terbaru, atau membaca kabar desa.</p>
-        </div>
-    </main>
+    <!-- Kontak -->
+    <section class="contact" id="contact">
+        <h2>Hubungi Kami</h2>
+        <p>Ada pertanyaan atau ingin memesan dalam jumlah banyak? Hubungi kami langsung via WhatsApp.</p>
+        <a href="https://wa.me/628123456789?text=Halo%20Rasa%20Rumah,%20saya%20tertarik%20memesan%20produk%20Anda." class="btn-cta" target="_blank">Hubungi Kami (WhatsApp)</a>
+        <p style="margin-top: 15px; font-size: 0.9rem; color: #888;">Alamat: Jl. Kenanga No. 12, Kota Bandung</p>
+    </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-xs border-t border-gray-800">
-        <div class="container mx-auto px-4">
-            <p>&copy; 2026 Pemerintah Desa Makmur Jaya. Hak Cipta Dilindungi Undang-Undang.</p>
-        </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Kedai Rasa Rumah. Hak Cipta Dilindungi.</p>
     </footer>
-
-    <!-- JAVASCRIPT UNTUK TOGGLE MENU -->
-    <script>
-        const btnFitur = document.getElementById('btn-fitur');
-        const panelFitur = document.getElementById('panel-fitur');
-        const iconChevron = document.getElementById('icon-chevron');
-
-        function toggleMenu() {
-            panelFitur.classList.toggle('hidden');
-            iconChevron.classList.toggle('rotate-180');
-        }
-
-        // Event listener saat tombol diklik
-        btnFitur.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleMenu();
-        });
-
-        // Menutup panel jika pengguna mengklik di luar area menu
-        document.addEventListener('click', (e) => {
-            if (!panelFitur.contains(e.target) && !btnFitur.contains(e.target)) {
-                panelFitur.classList.add('hidden');
-                iconChevron.classList.remove('rotate-180');
-            }
-        });
-    </script>
 
 </body>
 </html>
