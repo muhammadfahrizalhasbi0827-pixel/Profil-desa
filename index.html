@@ -7,80 +7,127 @@
     <title>Portal UMKM Kreatif</title>
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --accent-color: #e67e22;
-            --bg-color: #f8f9fa;
-            --text-color: #2c3e50;
+            /* Palet warna yang lebih modern, tenang, dan elegan */
+            --primary-color: #0f172a; /* Slate gelap premium */
+            --accent-color: #f97316;  /* Oranye hangat yang energetik */
+            --accent-hover: #ea580c;  /* Oranye gelap saat hover */
+            --bg-color: #f8fafc;      /* Background abu-abu sangat muda dan bersih */
+            --text-color: #334155;    /* Warna teks yang lembut untuk keterbacaan tinggi */
+            --card-bg: #ffffff;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: var(--bg-color);
             color: var(--text-color);
+            line-height: 1.6;
         }
         header {
-            background-color: var(--primary-color);
-            color: #fff;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
             text-align: center;
-            padding: 40px 20px;
+            padding: 70px 20px;
+            position: relative;
+            overflow: hidden;
         }
-        header h1 { margin: 0; font-size: 2.5em; }
-        header p { margin: 10px 0 0 0; opacity: 0.9; }
+        /* Garis dekoratif tipis di bawah header untuk kesan premium */
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent-color), #f43f5e);
+        }
+        header h1 { 
+            margin: 0; 
+            font-size: 2.6em; 
+            font-weight: 800;
+            letter-spacing: -0.025em;
+        }
+        header p { 
+            margin: 15px 0 0 0; 
+            opacity: 0.85; 
+            font-size: 1.1em;
+            font-weight: 300;
+        }
         
         .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 24px;
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
         }
         .card {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
             overflow: hidden;
-            transition: transform 0.3s ease;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
         }
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            border-color: #cbd5e1;
         }
         .card-body {
-            padding: 25px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
         }
         .card-title {
-            font-size: 1.5em;
+            font-size: 1.4em;
+            font-weight: 700;
             margin-top: 0;
+            margin-bottom: 12px;
             color: var(--primary-color);
+            letter-spacing: -0.01em;
         }
         .card-text {
-            color: #7f8c8d;
+            color: #64748b;
             font-size: 0.95em;
-            line-height: 1.5;
+            line-height: 1.6;
+            margin-bottom: 24px;
         }
         .btn {
             display: inline-block;
             background-color: var(--accent-color);
             color: #fff;
-            padding: 10px 20px;
+            padding: 12px 24px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: background 0.3s ease;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: var(--transition);
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(249, 115, 22, 0.15);
+            align-self: flex-start; /* Menjaga ukuran tombol tetap proporsional */
         }
         .btn:hover {
-            background-color: #d35400;
+            background-color: var(--accent-hover);
+            box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.3);
+            transform: translateY(-1px);
         }
         footer {
             text-align: center;
-            padding: 30px;
-            background: #2c3e50;
-            color: #fff;
-            margin-top: 50px;
+            padding: 40px 20px;
+            background: #0f172a;
+            color: #94a3b8;
+            margin-top: 80px;
+            border-top: 1px solid #1e293b;
+            font-size: 0.9em;
         }
     </style>
 </head>
