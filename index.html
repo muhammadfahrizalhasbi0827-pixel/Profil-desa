@@ -1,3 +1,183 @@
-<html>
-  
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Desa Makmur Jaya</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="bg-emerald-700 text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-mountain-sun text-2xl"></i>
+                <span class="font-bold text-lg tracking-wider">Desa Makmur Jaya</span>
+            </div>
+            <ul class="hidden md:flex space-x-6 text-sm font-medium">
+                <li><a href="#" class="hover:text-emerald-200 transition">Beranda</a></li>
+                <li><a href="#" class="hover:text-emerald-200 transition">Profil</a></li>
+                <li><a href="#" class="hover:text-emerald-200 transition">Data Demografi</a></li>
+                <li><a href="#" class="hover:text-emerald-200 transition">Layanan Publik</a></li>
+                <li><a href="#" class="hover:text-emerald-200 transition">Kabar Desa</a></li>
+            </ul>
+            <button class="bg-white text-emerald-700 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-emerald-100 transition shadow">
+                Layanan Mandiri
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative bg-cover bg-center h-[500px]" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80');">
+        <div class="container mx-auto px-4 h-full flex flex-col justify-center items-center text-center text-white">
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-4">Selamat Datang di Portal Desa Makmur Jaya</h1>
+            <p class="text-md md:text-lg max-w-2xl mb-8 text-gray-200">Mewujudkan pelayanan desa yang transparan, akuntabel, dan berbasis teknologi informasi menuju masyarakat sejahtera.</p>
+            <div class="space-x-4">
+                <a href="#statistik" class="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3 rounded-lg font-medium shadow transition">Lihat Statistik Desa</a>
+                <a href="#berita" class="bg-transparent border border-white hover:bg-white hover:text-gray-900 text-white px-6 py-3 rounded-lg font-medium transition">Kabar Terbaru</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- STATISTIK CEPAT (Koneksi ke Database Kependudukan) -->
+    <section id="statistik" class="py-12 bg-white shadow-sm -mt-16 relative z-10 max-w-5xl mx-auto rounded-xl px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="p-4 border-r border-gray-100 last:border-0">
+                <div class="text-3xl font-bold text-emerald-700">3,420</div>
+                <p class="text-xs uppercase tracking-wider text-gray-500 font-semibold mt-1">Total Penduduk</p>
+            </div>
+            <div class="p-4 border-r border-gray-100 last:border-0">
+                <div class="text-3xl font-bold text-emerald-700">1,150</div>
+                <p class="text-xs uppercase tracking-wider text-gray-500 font-semibold mt-1">Kepala Keluarga</p>
+            </div>
+            <div class="p-4 border-r border-gray-100 last:border-0">
+                <div class="text-3xl font-bold text-emerald-700">12</div>
+                <p class="text-xs uppercase tracking-wider text-gray-500 font-semibold mt-1">RT / RW</p>
+            </div>
+            <div class="p-4">
+                <div class="text-3xl font-bold text-emerald-700">45</div>
+                <p class="text-xs uppercase tracking-wider text-gray-500 font-semibold mt-1">UMKM Aktif</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FITUR UTAMA -->
+    <section class="py-16 container mx-auto px-4">
+        <h2 class="text-2xl font-bold text-center text-gray-800 mb-12">Layanan & Fitur Unggulan</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Layanan 1 -->
+            <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition text-center border-t-4 border-emerald-600">
+                <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-file-signature text-xl"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Persuratan Mandiri</h3>
+                <p class="text-gray-600 text-sm mb-4">Ajukan permohonan surat keterangan (domisili, usaha, dll) secara online secara lebih praktis.</p>
+                <a href="#" class="text-emerald-700 hover:text-emerald-600 text-sm font-semibold">Ajukan Surat &rarr;</a>
+            </div>
+            <!-- Layanan 2 -->
+            <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition text-center border-t-4 border-emerald-600">
+                <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-chart-pie text-xl"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Data Transparan</h3>
+                <p class="text-gray-600 text-sm mb-4">Informasi demografi, tingkat pendidikan, dan profesi warga desa disajikan secara transparan.</p>
+                <a href="#" class="text-emerald-700 hover:text-emerald-600 text-sm font-semibold">Lihat Grafik &rarr;</a>
+            </div>
+            <!-- Layanan 3 -->
+            <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition text-center border-t-4 border-emerald-600">
+                <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-store text-xl"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Pasar Desa (UMKM)</h3>
+                <p class="text-gray-600 text-sm mb-4">Dukung usaha lokal dengan menjelajahi direktori produk unggulan hasil karya warga desa.</p>
+                <a href="#" class="text-emerald-700 hover:text-emerald-600 text-sm font-semibold">Lihat Produk &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BERITA TERBARU (Koneksi ke Tabel Artikel/Berita) -->
+    <section id="berita" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-800">Kabar Terbaru Desa</h2>
+                    <p class="text-gray-500 text-sm">Informasi terkini mengenai kegiatan dan pengumuman di desa</p>
+                </div>
+                <a href="#" class="text-emerald-700 hover:text-emerald-600 text-sm font-semibold hidden md:block">Lihat Semua Berita &rarr;</a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Artikel 1 -->
+                <article class="bg-white rounded-lg overflow-hidden shadow">
+                    <img src="https://images.unsplash.com/photo-1595113316349-9fa4ee24f884?auto=format&fit=crop&w=600&q=80" alt="Kerja bakti" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-emerald-600 uppercase">Kegiatan</span>
+                        <h3 class="font-bold text-lg mt-2 mb-2 hover:text-emerald-700 transition"><a href="#">Gotong Royong Kebersihan Lingkungan Dusun III</a></h3>
+                        <p class="text-gray-600 text-sm line-clamp-3">Warga Dusun III melaksanakan kerja bakti pembersihan saluran irigasi guna mengantisipasi musim penghujan...</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-xs text-gray-500">
+                            <span><i class="fa-regular fa-calendar mr-1"></i> 12 Okt 2026</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Artikel 2 -->
+                <article class="bg-white rounded-lg overflow-hidden shadow">
+                    <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600&q=80" alt="Bantuan sosial" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-amber-600 uppercase">Pengumuman</span>
+                        <h3 class="font-bold text-lg mt-2 mb-2 hover:text-emerald-700 transition"><a href="#">Penyaluran Bantuan Langsung Tunai (BLT) Tahap III</a></h3>
+                        <p class="text-gray-600 text-sm line-clamp-3">Pemerintah Desa Makmur Jaya mengumumkan jadwal penyaluran BLT bagi KPM yang terdaftar pada bulan ini...</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-xs text-gray-500">
+                            <span><i class="fa-regular fa-calendar mr-1"></i> 10 Okt 2026</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Artikel 3 -->
+                <article class="bg-white rounded-lg overflow-hidden shadow">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" alt="UMKM" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-emerald-600 uppercase">Ekonomi</span>
+                        <h3 class="font-bold text-lg mt-2 mb-2 hover:text-emerald-700 transition"><a href="#">Pelatihan Digital Marketing Untuk UMKM Desa</a></h3>
+                        <p class="text-gray-600 text-sm line-clamp-3">Meningkatkan kapasitas pemasaran digital bagi para pelaku usaha kerajinan bambu lokal agar dapat bersaing secara luas...</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-xs text-gray-500">
+                            <span><i class="fa-regular fa-calendar mr-1"></i> 05 Okt 2026</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h4 class="text-white font-bold text-lg mb-4">Desa Makmur Jaya</h4>
+                <p class="text-sm leading-relaxed">Sistem Informasi dan Profil Desa resmi yang dikembangkan untuk memberikan pelayanan prima kepada warga masyarakat.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold text-lg mb-4">Kontak Kami</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><i class="fa-solid fa-location-dot mr-2"></i> Jl. Raya Desa No. 45, Kecamatan Makmur</li>
+                    <li><i class="fa-solid fa-phone mr-2"></i> (021) 12345678</li>
+                    <li><i class="fa-solid fa-envelope mr-2"></i> info@makmurjaya.desa.id</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold text-lg mb-4">Tautan Terkait</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition">Kementerian Desa</a></li>
+                    <li><a href="#" class="hover:text-white transition">Pemerintah Kabupaten</a></li>
+                    <li><a href="#" class="hover:text-white transition">Layanan Pengaduan</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-6 text-center text-xs">
+            &copy; 2026 Pemerintah Desa Makmur Jaya. Hak Cipta Dilindungi Undang-Undang.
+        </div>
+    </footer>
+
+</body>
 </html>
