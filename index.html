@@ -3,319 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kedai Rasa Rumah - UMKM Kuliner Lokal</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portal UMKM Kreatif</title>
     <style>
-        /* Reset dan Basis */
-        * {
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f8f9fa;
+            --text-color: #2c3e50;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
         }
-
-        body {
-            color: #333;
-            line-height: 1.6;
-            background-color: #fcfcfc;
-        }
-
-        /* Navigasi */
         header {
-            background-color: #ffffff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #8B4513; /* Warna cokelat hangat */
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-
-        .nav-links li {
-            margin-left: 20px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #555;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #8B4513;
-        }
-
-        /* Hero Section */
-        .hero {
-            background-color: #f5ebe0;
-            padding: 80px 5%;
+            background-color: var(--primary-color);
+            color: #fff;
             text-align: center;
+            padding: 40px 20px;
         }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
+        header h1 { margin: 0; font-size: 2.5em; }
+        header p { margin: 10px 0 0 0; opacity: 0.9; }
+        
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            color: #4a2c11;
-            margin-bottom: 15px;
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 25px;
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: transform 0.3s ease;
         }
-
-        .btn-cta {
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-body {
+            padding: 25px;
+        }
+        .card-title {
+            font-size: 1.5em;
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        .card-text {
+            color: #7f8c8d;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+        .btn {
             display: inline-block;
-            background-color: #8B4513;
-            color: white;
-            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            transition: background 0.3s;
+            margin-top: 15px;
+            transition: background 0.3s ease;
         }
-
-        .btn-cta:hover {
-            background-color: #6f370f;
+        .btn:hover {
+            background-color: #d35400;
         }
-
-        /* Tentang Kami */
-        .about {
-            padding: 60px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about h2 {
-            font-size: 2rem;
-            color: #4a2c11;
-            margin-bottom: 20px;
-        }
-
-        .about p {
-            max-width: 700px;
-            margin: 0 auto;
-            color: #666;
-        }
-
-        /* Produk */
-        .products {
-            background-color: #f9f9f9;
-            padding: 60px 5%;
-        }
-
-        .products-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .products h2 {
-            text-align: center;
-            font-size: 2rem;
-            color: #4a2c11;
-            margin-bottom: 40px;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Placeholder gambar menggunakan warna solid, silakan ganti dengan url gambar Anda */
-        .product-image {
-            height: 200px;
-            background-color: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
-            font-weight: bold;
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-title {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .product-price {
-            font-weight: bold;
-            color: #8B4513;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-
-        /* Kontak */
-        .contact {
-            padding: 60px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact h2 {
-            font-size: 2rem;
-            color: #4a2c11;
-            margin-bottom: 20px;
-        }
-
-        .contact p {
-            margin-bottom: 30px;
-            color: #666;
-        }
-
-        /* Footer */
         footer {
-            background-color: #3e2713;
-            color: white;
             text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-        }
-
-        /* Responsif (Layar Kecil) */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .nav-links {
-                padding: 0;
-            }
-
-            .nav-links li {
-                margin: 0 10px;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
+            padding: 30px;
+            background: #2c3e50;
+            color: #fff;
+            margin-top: 50px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header & Navigasi -->
     <header>
-        <nav class="navbar">
-            <div class="logo">Rasa Rumah</div>
-            <ul class="nav-links">
-                <li><a href="#home">Beranda</a></li>
-                <li><a href="#about">Tentang Kami</a></li>
-                <li><a href="#products">Produk</a></li>
-                <li><a href="#contact">Hubungi</a></li>
-            </ul>
-        </nav>
+        <h1>Direktori UMKM Unggulan</h1>
+        <p>Mendukung usaha lokal untuk terus berkembang</p>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Cita Rasa Rumahan, Kualitas Pilihan</h1>
-            <p>Menghadirkan aneka jajanan dan kopi tradisional yang dibuat dengan bahan baku berkualitas serta resep turun-temurun.</p>
-            <a href="https://wa.me/628123456789" class="btn-cta" target="_blank">Pesan Sekarang via WA</a>
-        </div>
-    </section>
-
-    <!-- Tentang Kami -->
-    <section class="about" id="about">
-        <h2>Tentang Kami</h2>
-        <p>Kedai Rasa Rumah berdiri sejak tahun 2021. Kami berkomitmen untuk menyajikan produk kuliner lokal yang higienis, lezat, dan ramah di kantong. Setiap produk dibuat langsung secara higienis untuk menjaga mutu dan cita rasa autentiknya.</p>
-    </section>
-
-    <!-- Produk -->
-    <section class="products" id="products">
-        <div class="products-container">
-            <h2>Menu Unggulan Kami</h2>
-            <div class="product-grid">
-                
-                <!-- Produk 1 -->
-                <div class="product-card">
-                    <div class="product-image">Foto Produk 1</div>
-                    <div class="product-info">
-                        <h3 class="product-title">Kopi Susu Gula Aren</h3>
-                        <p class="product-price">Rp 15.000</p>
-                        <p style="color: #666; font-size: 0.9rem;">Perpaduan kopi espresso lokal dengan susu segar dan pemanis gula aren alami.</p>
-                    </div>
+    <div class="container">
+        <div class="grid">
+            <!-- Kartu UMKM 1 -->
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Dapur Rasa Kuliner</h3>
+                    <p class="card-text">Menyajikan aneka kuliner nusantara dengan bahan pilihan berkualitas tinggi dan higienis.</p>
+                    <a href="umkm-kuliner/index.html" class="btn">Kunjungi Toko</a>
                 </div>
+            </div>
 
-                <!-- Produk 2 -->
-                <div class="product-card">
-                    <div class="product-image">Foto Produk 2</div>
-                    <div class="product-info">
-                        <h3 class="product-title">Keripik Singkong Renyah</h3>
-                        <p class="product-price">Rp 12.000</p>
-                        <p style="color: #666; font-size: 0.9rem;">Keripik singkong tipis dengan varian rasa original asin dan pedas daun jeruk.</p>
-                    </div>
+            <!-- Kartu UMKM 2 -->
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Gaya Kita Fashion</h3>
+                    <p class="card-text">Koleksi pakaian modern dengan sentuhan etnik lokal yang trendi untuk aktivitas harian Anda.</p>
+                    <a href="umkm-fashion/index.html" class="btn">Kunjungi Toko</a>
                 </div>
-
-                <!-- Produk 3 -->
-                <div class="product-card">
-                    <div class="product-image">Foto Produk 3</div>
-                    <div class="product-info">
-                        <h3 class="product-title">Roti Bakar Cokelat Keju</h3>
-                        <p class="product-price">Rp 18.000</p>
-                        <p style="color: #666; font-size: 0.9rem;">Roti panggang dengan isian cokelat premium melimpah dan taburan keju gurih.</p>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Kontak -->
-    <section class="contact" id="contact">
-        <h2>Hubungi Kami</h2>
-        <p>Ada pertanyaan atau ingin memesan dalam jumlah banyak? Hubungi kami langsung via WhatsApp.</p>
-        <a href="https://wa.me/628123456789?text=Halo%20Rasa%20Rumah,%20saya%20tertarik%20memesan%20produk%20Anda." class="btn-cta" target="_blank">Hubungi Kami (WhatsApp)</a>
-        <p style="margin-top: 15px; font-size: 0.9rem; color: #888;">Alamat: Jl. Kenanga No. 12, Kota Bandung</p>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Kedai Rasa Rumah. Hak Cipta Dilindungi.</p>
+        <p>&copy; 2024 Portal UMKM Lokal. Seluruh hak cipta dilindungi.</p>
     </footer>
 
 </body>
