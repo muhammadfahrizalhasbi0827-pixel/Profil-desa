@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Security Header Simulation via Meta Tags (Bisa disesuaikan di sisi server) -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Website Resmi Desa Makmur Jaya</title>
+    
+    <!-- Google Fonts & Font Awesome (HTTPS Aman) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #1b5e20;
+            --accent-color: #f57f17;
+            --bg-light: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-muted: #7f8c8d;
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(46, 125, 50, 0.8), rgba(27, 94, 32, 0.9)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: #ffffff;
+            padding: 140px 20px 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* Container Section */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Sejarah Section */
+        .sejarah-content {
+            background-color: var(--bg-light);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+        }
+
+        .sejarah-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Visi Misi Section */
+        .visimisi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card ul {
+            padding-left: 20px;
+        }
+
+        .card li {
+            margin-bottom: 10px;
+        }
+
+        /* Pengumuman Section */
+        .pengumuman-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .announcement-card {
+            background: #ffffff;
+            border-left: 5px solid var(--accent-color);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 0 12px 12px 0;
+            box-shadow: var(--shadow);
+        }
+
+        .announcement-date {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .announcement-card h4 {
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        /* Layanan Pengaduan Section */
+        .pengaduan-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 550px;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Secure Embedded Google Form Frame */
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* UMKM Section */
+        .umkm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .umkm-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .umkm-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .umkm-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .umkm-info {
+            padding: 20px;
+        }
+
+        .umkm-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .umkm-owner {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .umkm-desc {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .umkm-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+        }
+
+        .umkm-price {
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .btn-order {
+            background-color: #25D366;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-order:hover {
+            background-color: #1ebd59;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a3e1c;
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .footer-links a {
+            color: #a3b899;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .visimisi-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none; /* Dapat dikembangkan dengan menu hamburger yang aman */
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-tree-city"></i> Makmur Jaya
+            </a>
+            <ul class="nav-links">
+                <li><a href="#sejarah">Sejarah</a></li>
+                <li><a href="#visimisi">Visi & Misi</a></li>
+                <li><a href="#pengumuman">Pengumuman</a></li>
+                <li><a href="#pengaduan">Layanan Pengaduan</a></li>
+                <li><a href="#umkm">UMKM Desa</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Selamat Datang di Portal Desa Makmur Jaya</h1>
+        <p>Mewujudkan tata kelola pemerintahan desa yang bersih, transparan, mandiri, dan berfokus pada kemakmuran masyarakat.</p>
+    </header>
+
+    <main>
+        <!-- Sejarah Section -->
+        <section id="sejarah">
+            <h2 class="section-title">Sejarah Desa</h2>
+            <div class="sejarah-content">
+                <p>Desa Makmur Jaya didirikan pada tahun 1965 oleh sekelompok perintis perkebunan yang berkomitmen mengembangkan daerah pertanian yang subur ini. Awal mulanya daerah ini merupakan kawasan persawahan tadah hujan yang kemudian berkembang pesat melalui program transmigrasi swakarsa.</p>
+                <p>Melalui kepemimpinan yang berkesinambungan dan kerja keras warganya, Desa Makmur Jaya bertransformasi menjadi salah satu desa percontohan yang mandiri, dengan basis ekonomi utama di bidang hortikultura, perkebunan rakyat, dan industri kreatif skala rumah tangga.</p>
+            </div>
+        </section>
+
+        <!-- Visi Misi Section -->
+        <section id="visimisi">
+            <h2 class="section-title">Visi & Misi</h2>
+            <div class="visimisi-grid">
+                <div class="card">
+                    <h3><i class="fa-solid fa-eye"></i> Visi</h3>
+                    <p>"Terwujudnya Desa Makmur Jaya yang Sejahtera, Mandiri, dan Berbudaya Berlandaskan Gotong Royong pada Tahun 2029."</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-bullseye"></i> Misi</h3>
+                    <ul>
+                        <li>Meningkatkan kualitas pelayanan administrasi publik yang cepat, bersih, dan bebas pungli.</li>
+                        <li>Mengembangkan sektor pertanian terpadu dan mendukung pemberdayaan UMKM lokal.</li>
+                        <li>Memelihara serta melestarikan adat istiadat dan nilai kebudayaan gotong royong warga.</li>
+                        <li>Membangun infrastruktur desa yang merata, berkelanjutan, dan ramah lingkungan.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pengumuman Section -->
+        <section id="pengumuman">
+            <h2 class="section-title">Pengumuman Resmi</h2>
+            <div class="pengumuman-grid">
+                <div class="announcement-card">
+                    <div class="announcement-date"><i class="fa-solid fa-calendar-days"></i> 15 Mei 2026</div>
+                    <h4>Penerimaan Bantuan Langsung Tunai (BLT) Tahap II</h4>
+                    <p>Diberitahukan kepada seluruh keluarga penerima manfaat agar hadir di balai desa pada pukul 08:00 WIB dengan membawa KTP dan KK asli.</p>
+                </div>
+                <div class="announcement-card">
+                    <div class="announcement-date"><i class="fa-solid fa-calendar-days"></i> 10 Mei 2026</div>
+                    <h4>Kegiatan Kerja Bakti Massal Kebersihan Lingkungan</h4>
+                    <p>Dalam rangka menyambut musim penghujan, warga dihimbau ikut serta membersihkan saluran air dan drainase lingkungan masing-masing demi mencegah banjir.</p>
+                </div>
+                <div class="announcement-card">
+                    <div class="announcement-date"><i class="fa-solid fa-calendar-days"></i> 05 Mei 2026</div>
+                    <h4>Pendaftaran Pelatihan Digitalisasi UMKM Desa</h4>
+                    <p>Bagi pelaku usaha mikro di lingkungan Desa Makmur Jaya, pendaftaran kelas pemasaran digital telah dibuka melalui kantor urusan kesejahteraan rakyat.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Layanan Pengaduan Section -->
+        <section id="pengaduan">
+            <h2 class="section-title">Layanan Pengaduan Masyarakat</h2>
+            <div class="pengaduan-container">
+                <p style="text-align: center; margin-bottom: 20px;">Silakan sampaikan aspirasi, saran, maupun keluhan Anda secara resmi melalui formulir terintegrasi di bawah ini.</p>
+                
+                <div class="iframe-container">
+                    <!-- 
+                        Keamanan Iframe diperkuat dengan:
+                        - Protokol HTTPS wajib untuk form
+                        - Atribut 'sandbox' untuk membatasi eksekusi fitur browser yang tidak perlu
+                        - referrerpolicy guna menyembunyikan informasi referer sensitif
+                    -->
+                    <iframe 
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSfD_YOUR_GOOGLE_FORM_ID/viewform?embedded=true" 
+                        sandbox="allow-form-action allow-scripts allow-same-origin allow-popups" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        loading="lazy"
+                        title="Formulir Layanan Pengaduan Resmi Desa">
+                        Memuat formulir...
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- UMKM Section -->
+        <section id="umkm">
+            <h2 class="section-title">UMKM & Produk Unggulan</h2>
+            <div class="umkm-grid">
+                <!-- Produk 1 -->
+                <div class="umkm-card">
+                    <img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=400&q=80" alt="Keripik Tempe Renyah" class="umkm-img" loading="lazy">
+                    <div class="umkm-info">
+                        <div class="umkm-name">Keripik Tempe "Ibu Sri"</div>
+                        <div class="umkm-owner">Oleh: Kelompok Wanita Tani Melati</div>
+                        <p class="umkm-desc">Keripik tempe tipis renyah tanpa pengawet kimia, diolah higienis dengan resep tradisional turun-temurun.</p>
+                        <div class="umkm-footer">
+                            <span class="umkm-price">Rp 12.000 / Pcs</span>
+                            <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20memesan%20Keripik%20Tempe%20Ibu%20Sri" target="_blank" rel="noopener noreferrer" class="btn-order">
+                                <i class="fa-brands fa-whatsapp"></i> Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produk 2 -->
+                <div class="umkm-card">
+                    <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=400&q=80" alt="Kopi Robusta Asli Desa" class="umkm-img" loading="lazy">
+                    <div class="umkm-info">
+                        <div class="umkm-name">Kopi Robusta "Wana Jaya"</div>
+                        <div class="umkm-owner">Oleh: Gapoktan Tunas Harapan</div>
+                        <p class="umkm-desc">Kopi robusta organik murni hasil petik merah perkebunan rakyat lereng bukit Desa Makmur Jaya.</p>
+                        <div class="umkm-footer">
+                            <span class="umkm-price">Rp 25.000 / 200g</span>
+                            <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20memesan%20Kopi%20Robusta%20Wana%20Jaya" target="_blank" rel="noopener noreferrer" class="btn-order">
+                                <i class="fa-brands fa-whatsapp"></i> Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produk 3 -->
+                <div class="umkm-card">
+                    <img src="https://images.unsplash.com/photo-1606722590583-6951b5ea92ad?auto=format&fit=crop&w=400&q=80" alt="Madu Hutan Alami" class="umkm-img" loading="lazy">
+                    <div class="umkm-info">
+                        <div class="umkm-name">Madu Hutan Liar "Murni"</div>
+                        <div class="umkm-owner">Oleh: Koperasi Makmur Sejahtera</div>
+                        <p class="umkm-desc">Madu asli hasil buruan lestari dari hutan lindung desa, kaya akan nutrisi dan tanpa tambahan pemanis buatan.</p>
+                        <div class="umkm-footer">
+                            <span class="umkm-price">Rp 85.000 / 350ml</span>
+                            <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20memesan%20Madu%20Hutan%20Liar" target="_blank" rel="noopener noreferrer" class="btn-order">
+                                <i class="fa-brands fa-whatsapp"></i> Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Pemerintah Desa Makmur Jaya. Seluruh hak cipta dilindungi undang-undang.</p>
+            <p style="font-size: 0.8rem; color: #a3b899;"><i class="fa-solid fa-shield-halved"></i> Website ini telah dikonfigurasi dengan standar keamanan transfer data HTTPS.</p>
+            <ul class="footer-links">
+                <li><a href="#sejarah">Profil</a></li>
+                <li><a href="#pengaduan">Aspirasi</a></li>
+                <li><a href="#umkm">Kontak UMKM</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
