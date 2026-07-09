@@ -3,166 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portal UMKM Kreatif</title>
+    <title>Tautan Resmi Profil Desa</title>
+    <!-- Google Fonts untuk tipografi yang rapi -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome untuk ikon sosial media -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            /* Palet warna yang lebih modern, tenang, dan elegan */
-            --primary-color: #0f172a; /* Slate gelap premium */
-            --accent-color: #f97316;  /* Oranye hangat yang energetik */
-            --accent-hover: #ea580c;  /* Oranye gelap saat hover */
-            --bg-color: #f8fafc;      /* Background abu-abu sangat muda dan bersih */
-            --text-color: #334155;    /* Warna teks yang lembut untuk keterbacaan tinggi */
-            --card-bg: #ffffff;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --primary-color: #2e7d32; /* Hijau khas desa/alam */
+            --text-dark: #2c3e50;
+            --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
         }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
-        header {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: #ffffff;
-            text-align: center;
-            padding: 70px 20px;
-            position: relative;
-            overflow: hidden;
+
+        body {
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: var(--text-dark);
         }
-        /* Garis dekoratif tipis di bawah header untuk kesan premium */
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(to right, var(--accent-color), #f43f5e);
-        }
-        header h1 { 
-            margin: 0; 
-            font-size: 2.6em; 
-            font-weight: 800;
-            letter-spacing: -0.025em;
-        }
-        header p { 
-            margin: 15px 0 0 0; 
-            opacity: 0.85; 
-            font-size: 1.1em;
-            font-weight: 300;
-        }
-        
+
         .container {
-            max-width: 1000px;
-            margin: 60px auto;
-            padding: 0 24px;
+            background: rgba(255, 255, 255, 0.95);
+            width: 100%;
+            max-width: 480px;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            backdrop-filter: blur(10px);
         }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 32px;
+
+        /* Bagian Profil */
+        .profile-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
         }
-        .card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-        }
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-            border-color: #cbd5e1;
-        }
-        .card-body {
-            padding: 32px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-        }
-        .card-title {
-            font-size: 1.4em;
+
+        .profile-name {
+            font-size: 1.4rem;
             font-weight: 700;
-            margin-top: 0;
-            margin-bottom: 12px;
             color: var(--primary-color);
-            letter-spacing: -0.01em;
+            margin-bottom: 5px;
         }
-        .card-text {
-            color: #64748b;
-            font-size: 0.95em;
-            line-height: 1.6;
-            margin-bottom: 24px;
+
+        .profile-subtitle {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            line-height: 1.4;
         }
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: #fff;
-            padding: 12px 24px;
+
+        /* Bagian Tautan */
+        .links-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            border-radius: 12px;
             text-decoration: none;
-            border-radius: 8px;
             font-weight: 600;
-            font-size: 0.95em;
-            transition: var(--transition);
-            text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(249, 115, 22, 0.15);
-            align-self: flex-start; /* Menjaga ukuran tombol tetap proporsional */
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
         }
-        .btn:hover {
-            background-color: var(--accent-hover);
-            box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.3);
-            transform: translateY(-1px);
+
+        /* Gaya Khusus untuk Masing-masing Tombol */
+        .btn-website {
+            background-color: var(--primary-color);
+            color: #ffffff;
         }
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            background: #0f172a;
-            color: #94a3b8;
-            margin-top: 80px;
-            border-top: 1px solid #1e293b;
-            font-size: 0.9em;
+        .btn-website:hover {
+            background-color: #1b5e20;
+            transform: translateY(-2px);
+        }
+
+        .btn-instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+            color: #ffffff;
+        }
+        .btn-instagram:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .btn-tiktok {
+            background-color: #010101;
+            color: #ffffff;
+        }
+        .btn-tiktok:hover {
+            background-color: #252525;
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: #ffffff;
+        }
+        .btn-whatsapp:hover {
+            background-color: #1ebd59;
+            transform: translateY(-2px);
+        }
+
+        /* Icon styling */
+        .link-btn i {
+            font-size: 1.3rem;
+            width: 30px;
+            text-align: left;
+        }
+
+        .arrow-icon {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 40px;
+            font-size: 0.75rem;
+            color: #95a5a6;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Direktori UMKM Unggulan</h1>
-        <p>Mendukung usaha lokal untuk terus berkembang</p>
-    </header>
-
     <div class="container">
-        <div class="grid">
-            <!-- Kartu UMKM 1 -->
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Dapur Rasa Kuliner</h3>
-                    <p class="card-text">Menyajikan aneka kuliner nusantara dengan bahan pilihan berkualitas tinggi dan higienis.</p>
-                    <a href="umkm-kuliner/index.html" class="btn">Kunjungi Toko</a>
-                </div>
-            </div>
+        <!-- Logo atau Foto Profil Desa -->
+        <!-- Ganti 'logo-desa.png' dengan URL logo desa Anda -->
+        <img src="https://via.placeholder.com/150" alt="Logo Desa" class="profile-img">
 
-            <!-- Kartu UMKM 2 -->
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Dapur Manis</h3>
-                    <p class="card-text">Menyajikan aneka kuliner camilan tradisional dengan bahan pilihan berkualitas tinggi dan higienis.</p>
-                    <a href="umkm-dapur manis/index.html" class="btn">Kunjungi Toko</a>
-                </div>
-            </div>
+        <!-- Informasi Desa -->
+        <h1 class="profile-name">Desa Makmur Jaya</h1>
+        <p class="profile-subtitle">Layanan Informasi Terpadu dan Media Sosial Resmi Pemerintah Desa Makmur Jaya</p>
+
+        <!-- Daftar Tautan -->
+        <div class="links-wrapper">
+            
+            <!-- Tautan Profil Desa / Website -->
+            <!-- Ganti href dengan URL website desa Anda -->
+            <a href="https://www.nama-desa.go.id" target="_blank" class="link-btn btn-website">
+                <span><i class="fa-solid fa-globe"></i> Profil & Web Desa</span>
+                <span class="arrow-icon"><i class="fa-solid fa-chevron-right"></i></span>
+            </a>
+
+            <!-- Tautan Instagram -->
+            <!-- Ganti href dengan URL Instagram desa Anda -->
+            <a href="https://instagram.com/username-desa" target="_blank" class="link-btn btn-instagram">
+                <span><i class="fa-brands fa-instagram"></i> Instagram Resmi</span>
+                <span class="arrow-icon"><i class="fa-solid fa-chevron-right"></i></span>
+            </a>
+
+            <!-- Tautan TikTok -->
+            <!-- Ganti href dengan URL TikTok desa Anda -->
+            <a href="https://tiktok.com/@username-desa" target="_blank" class="link-btn btn-tiktok">
+                <span><i class="fa-brands fa-tiktok"></i> TikTok Resmi</span>
+                <span class="arrow-icon"><i class="fa-solid fa-chevron-right"></i></span>
+            </a>
+
+            <!-- Tautan WhatsApp -->
+            <!-- Ganti nomor WhatsApp pada href di bawah ini -->
+            <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Desa" target="_blank" class="link-btn btn-whatsapp">
+                <span><i class="fa-brands fa-whatsapp"></i> Layanan WhatsApp</span>
+                <span class="arrow-icon"><i class="fa-solid fa-chevron-right"></i></span>
+            </a>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2026 Pemerintah Desa Makmur Jaya. All Rights Reserved.</p>
         </div>
     </div>
-
-    <footer>
-        <p>&copy; 2024 Portal UMKM Lokal. Seluruh hak cipta dilindungi.</p>
-    </footer>
 
 </body>
 </html>
