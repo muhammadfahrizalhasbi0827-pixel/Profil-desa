@@ -90,6 +90,14 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.03);
         }
 
+        /* Merapikan susunan ikon dan teks di dalam tombol */
+        .link-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-align: left;
+        }
+
         /* Gaya Khusus untuk Masing-masing Tombol */
         .btn-website {
             background-color: var(--primary-color);
@@ -105,7 +113,7 @@
             color: #ffffff;
         }
         .btn-instagram:hover {
-            opacity: 0.9;
+            opacity: 0.95;
             transform: translateY(-2px);
         }
 
@@ -148,13 +156,16 @@
         /* Icon styling */
         .link-btn i {
             font-size: 1.3rem;
-            width: 30px;
-            text-align: left;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .arrow-icon {
             font-size: 0.9rem;
             opacity: 0.7;
+            display: flex;
+            align-items: center;
         }
 
         /* Footer */
@@ -180,39 +191,55 @@
             
             <!-- Tautan Profil Desa / Website -->
             <a href="profil desa/profil desa.html" target="_blank" class="link-btn btn-website">
-                <span><i class="fa-solid fa-globe"></i> Profil & Web Desa</span>
+                <span class="link-content">
+                    <i class="fa-solid fa-globe"></i> 
+                    <span>Profil & Web Desa</span>
+                </span>
                 <span class="arrow-icon"><i class="fa-solid fa-chevron-right"></i></span>
             </a>
 
             <!-- Tautan Instagram -->
             <a href="https://www.instagram.com/batulicin_irigasi/" target="_blank" class="link-btn btn-instagram">
-                <span><i class="fa-brands fa-instagram"></i> Instagram Resmi</span>
+                <span class="link-content">
+                    <i class="fa-brands fa-instagram"></i> 
+                    <span>Instagram Resmi</span>
+                </span>
                 <span class="arrow-icon"><i class="fa-solid fa-chevron-right"></i></span>
             </a>
 
             <!-- Tautan YouTube -->
-            <!-- Silakan ganti href di bawah ini dengan tautan channel YouTube desa Anda -->
             <a href="https://youtube.com/@BATULICINIRIGASI" target="_blank" class="link-btn btn-youtube">
-                <span><i class="fa-brands fa-youtube"></i> YouTube Resmi</span>
+                <span class="link-content">
+                    <i class="fa-brands fa-youtube"></i> 
+                    <span>YouTube Resmi</span>
+                </span>
                 <span class="arrow-icon"><i class="fa-solid fa-chevron-right"></i></span>
             </a>
 
             <!-- Tautan TikTok -->
             <a href="https://www.tiktok.com/@batulicinirigasi" target="_blank" class="link-btn btn-tiktok">
-                <span><i class="fa-brands fa-tiktok"></i> TikTok Resmi</span>
+                <span class="link-content">
+                    <i class="fa-brands fa-tiktok"></i> 
+                    <span>TikTok Resmi</span>
+                </span>
                 <span class="arrow-icon"><i class="fa-solid fa-chevron-right"></i></span>
             </a>
 
             <!-- Tautan WhatsApp -->
             <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Desa" target="_blank" class="link-btn btn-whatsapp">
-                <span><i class="fa-brands fa-whatsapp"></i> Layanan WhatsApp</span>
+                <span class="link-content">
+                    <i class="fa-brands fa-whatsapp"></i> 
+                    <span>Layanan WhatsApp</span>
+                </span>
                 <span class="arrow-icon"><i class="fa-solid fa-chevron-right"></i></span>
             </a>
 
             <!-- Tautan Google Maps -->
-            <!-- Silakan ganti href di bawah ini dengan tautan Google Maps koordinat/alamat kantor desa Anda -->
-            <a href="https://maps.app.goo.gl/gDYSPRLVesBAC1V96" target="_blank" class="link-btn btn-goggle maps">
-                <span><i class="fa-solid fa-map-location-dot"></i> Lokasi Kantor Desa</span>
+            <a href="https://maps.app.goo.gl/gDYSPRLVesBAC1V96" target="_blank" class="link-btn btn-maps">
+                <span class="link-content">
+                    <i class="fa-solid fa-map-location-dot"></i> 
+                    <span>Lokasi Kantor Desa</span>
+                </span>
                 <span class="arrow-icon"><i class="fa-solid fa-chevron-right"></i></span>
             </a>
 
