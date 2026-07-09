@@ -168,6 +168,46 @@
             align-items: center;
         }
 
+        /* Tampilan Google Maps Terintegrasi */
+        .map-section {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .map-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .map-title i {
+            color: #4285F4;
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Rasio aspek 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e0e0e0;
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
         /* Footer */
         .footer {
             margin-top: 40px;
@@ -234,15 +274,25 @@
                 <span class="arrow-icon"><i class="fa-solid fa-chevron-right"></i></span>
             </a>
 
-            <!-- Tautan Google Maps -->
+            <!-- Tautan Google Maps (Membuka aplikasi eksternal) -->
             <a href="https://maps.app.goo.gl/gDYSPRLVesBAC1V96" target="_blank" class="link-btn btn-maps">
                 <span class="link-content">
                     <i class="fa-solid fa-map-location-dot"></i> 
-                    <span>Lokasi Kantor Desa</span>
+                    <span>Buka di Google Maps</span>
                 </span>
                 <span class="arrow-icon"><i class="fa-solid fa-chevron-right"></i></span>
             </a>
 
+        </div>
+
+        <!-- Bagian Google Maps Interaktif Tersemat (Embed) -->
+        <div class="map-section">
+            <h2 class="map-title"><i class="fa-solid fa-location-dot"></i> Peta Kantor Desa</h2>
+            <div class="map-container">
+                <!-- Anda dapat mengganti tautan src di bawah ini dengan kode semat iframe dari Google Maps Anda -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.0285616486404!2d115.91072007087398!3d-3.3126784885185323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2def4c37fe9a51b7%3A0x60b55cc21fe301a8!2sKantor%20Desa%20Batulicin%20Irigasi!5e0!3m2!1sid!2sid!4v1783584882977!5m2!1sid!2sid"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
         </div>
 
         <!-- Footer -->
