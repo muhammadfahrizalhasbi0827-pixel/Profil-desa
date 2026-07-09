@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Security Header Simulation via Meta Tags (Bisa disesuaikan di sisi server) -->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
@@ -22,7 +21,7 @@
             --text-dark: #2c3e50;
             --text-muted: #7f8c8d;
             --border-color: #e2e8f0;
-            --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
         * {
@@ -42,7 +41,7 @@
             line-height: 1.6;
         }
 
-        /* Navigation */
+        /* Navigation Header */
         nav {
             background-color: #ffffff;
             border-bottom: 1px solid var(--border-color);
@@ -59,6 +58,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
 
         .logo {
@@ -71,22 +71,88 @@
             gap: 10px;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            list-style: none;
+        /* Menu Toggle Checkbox (Disembunyikan demi keamanan) */
+        .menu-checkbox {
+            display: none;
         }
 
-        .nav-links a {
+        /* Tombol Navigasi Tunggal */
+        .menu-trigger-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(46, 125, 50, 0.2);
+            user-select: none;
+        }
+
+        .menu-trigger-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-1px);
+        }
+
+        /* Tampilan Menu Dropdown */
+        .nav-menu-box {
+            display: none; /* Tersembunyi secara default */
+            position: absolute;
+            top: 75px;
+            right: 20px;
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            width: 260px;
+            padding: 10px 0;
+            list-style: none;
+            z-index: 1010;
+            animation: fadeIn 0.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .nav-menu-box li a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
             text-decoration: none;
             color: var(--text-dark);
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: color 0.3s;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid #f8f9fa;
         }
 
-        .nav-links a:hover {
+        .nav-menu-box li:last-child a {
+            border-bottom: none;
+        }
+
+        .nav-menu-box li a i {
             color: var(--primary-color);
+            width: 20px;
+            text-align: center;
+        }
+
+        .nav-menu-box li a:hover {
+            background-color: var(--bg-light);
+            color: var(--primary-color);
+            padding-left: 25px;
+        }
+
+        /* Menampilkan menu saat tombol (checkbox) dicentang */
+        .menu-checkbox:checked ~ .nav-menu-box {
+            display: block;
         }
 
         /* Hero Section */
@@ -139,7 +205,7 @@
             padding: 30px;
             border-radius: 12px;
             border: 1px solid var(--border-color);
-            box-shadow: var(--shadow);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
         .sejarah-content p {
@@ -159,7 +225,7 @@
             padding: 30px;
             border-radius: 12px;
             border: 1px solid var(--border-color);
-            box-shadow: var(--shadow);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
         .card h3 {
@@ -194,7 +260,7 @@
             border-bottom: 1px solid var(--border-color);
             padding: 25px;
             border-radius: 0 12px 12px 0;
-            box-shadow: var(--shadow);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
         .announcement-date {
@@ -230,7 +296,6 @@
             border: 1px solid var(--border-color);
         }
 
-        /* Secure Embedded Google Form Frame */
         .iframe-container iframe {
             width: 100%;
             height: 100%;
@@ -249,7 +314,7 @@
             border: 1px solid var(--border-color);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: var(--shadow);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s;
         }
 
@@ -333,30 +398,10 @@
             gap: 15px;
         }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            list-style: none;
-            margin-top: 10px;
-        }
-
-        .footer-links a {
-            color: #a3b899;
-            text-decoration: none;
-        }
-
-        .footer-links a:hover {
-            color: #ffffff;
-        }
-
         /* Responsive Styles */
         @media (max-width: 768px) {
             .visimisi-grid {
                 grid-template-columns: 1fr;
-            }
-            .nav-links {
-                display: none; /* Dapat dikembangkan dengan menu hamburger yang aman */
             }
             .hero h1 {
                 font-size: 2rem;
@@ -372,12 +417,22 @@
             <a href="#" class="logo">
                 <i class="fa-solid fa-tree-city"></i> Makmur Jaya
             </a>
-            <ul class="nav-links">
-                <li><a href="#sejarah">Sejarah</a></li>
-                <li><a href="#visimisi">Visi & Misi</a></li>
-                <li><a href="#pengumuman">Pengumuman</a></li>
-                <li><a href="#pengaduan">Layanan Pengaduan</a></li>
-                <li><a href="#umkm">UMKM Desa</a></li>
+            
+            <!-- Checkbox Pelatuk (Sembunyi) -->
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+            
+            <!-- Tombol Navigasi Utama -->
+            <label for="menu-toggle" class="menu-trigger-btn">
+                <i class="fa-solid fa-bars"></i> Menu Navigasi
+            </label>
+            
+            <!-- Kotak Menu yang Berisi Semua Tautan -->
+            <ul class="nav-menu-box" id="menu-box">
+                <li><a href="#sejarah" class="menu-link"><i class="fa-solid fa-book-open"></i> Sejarah</a></li>
+                <li><a href="#visimisi" class="menu-link"><i class="fa-solid fa-bullseye"></i> Visi & Misi</a></li>
+                <li><a href="#pengumuman" class="menu-link"><i class="fa-solid fa-bullhorn"></i> Pengumuman</a></li>
+                <li><a href="#pengaduan" class="menu-link"><i class="fa-solid fa-clipboard-question"></i> Layanan Pengaduan</a></li>
+                <li><a href="#umkm" class="menu-link"><i class="fa-solid fa-store"></i> UMKM Desa</a></li>
             </ul>
         </div>
     </nav>
@@ -447,12 +502,6 @@
                 <p style="text-align: center; margin-bottom: 20px;">Silakan sampaikan aspirasi, saran, maupun keluhan Anda secara resmi melalui formulir terintegrasi di bawah ini.</p>
                 
                 <div class="iframe-container">
-                    <!-- 
-                        Keamanan Iframe diperkuat dengan:
-                        - Protokol HTTPS wajib untuk form
-                        - Atribut 'sandbox' untuk membatasi eksekusi fitur browser yang tidak perlu
-                        - referrerpolicy guna menyembunyikan informasi referer sensitif
-                    -->
                     <iframe 
                         src="https://docs.google.com/forms/d/e/1FAIpQLSfD_YOUR_GOOGLE_FORM_ID/viewform?embedded=true" 
                         sandbox="allow-form-action allow-scripts allow-same-origin allow-popups" 
@@ -471,7 +520,7 @@
             <div class="umkm-grid">
                 <!-- Produk 1 -->
                 <div class="umkm-card">
-                    <img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=400&q=80" alt="Keripik Tempe Renyah" class="umkm-img" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=400&q=80" alt="Keripik Tempe" class="umkm-img" loading="lazy">
                     <div class="umkm-info">
                         <div class="umkm-name">Keripik Tempe "Ibu Sri"</div>
                         <div class="umkm-owner">Oleh: Kelompok Wanita Tani Melati</div>
@@ -487,7 +536,7 @@
 
                 <!-- Produk 2 -->
                 <div class="umkm-card">
-                    <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=400&q=80" alt="Kopi Robusta Asli Desa" class="umkm-img" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=400&q=80" alt="Kopi Robusta" class="umkm-img" loading="lazy">
                     <div class="umkm-info">
                         <div class="umkm-name">Kopi Robusta "Wana Jaya"</div>
                         <div class="umkm-owner">Oleh: Gapoktan Tunas Harapan</div>
@@ -503,7 +552,7 @@
 
                 <!-- Produk 3 -->
                 <div class="umkm-card">
-                    <img src="https://images.unsplash.com/photo-1606722590583-6951b5ea92ad?auto=format&fit=crop&w=400&q=80" alt="Madu Hutan Alami" class="umkm-img" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1606722590583-6951b5ea92ad?auto=format&fit=crop&w=400&q=80" alt="Madu Hutan" class="umkm-img" loading="lazy">
                     <div class="umkm-info">
                         <div class="umkm-name">Madu Hutan Liar "Murni"</div>
                         <div class="umkm-owner">Oleh: Koperasi Makmur Sejahtera</div>
@@ -525,13 +574,16 @@
         <div class="footer-content">
             <p>&copy; 2026 Pemerintah Desa Makmur Jaya. Seluruh hak cipta dilindungi undang-undang.</p>
             <p style="font-size: 0.8rem; color: #a3b899;"><i class="fa-solid fa-shield-halved"></i> Website ini telah dikonfigurasi dengan standar keamanan transfer data HTTPS.</p>
-            <ul class="footer-links">
-                <li><a href="#sejarah">Profil</a></li>
-                <li><a href="#pengaduan">Aspirasi</a></li>
-                <li><a href="#umkm">Kontak UMKM</a></li>
-            </ul>
         </div>
     </footer>
 
+    <!-- Script Sederhana Khusus Menutup Dropdown Saat Tautan Diklik -->
+    <script>
+        document.querySelectorAll('.menu-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('menu-toggle').checked = false;
+            });
+        });
+    </script>
 </body>
 </html>
